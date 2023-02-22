@@ -22,9 +22,10 @@
         </q-card-section>
       </q-card>
     </div>
-    <div class="row col-12 justify-between">
+
+    <div class="row">
       <q-card
-        class="col-xs-12 col-sm-12 col-md-5 q-pa-sm q-mr-md q-mb-xs-md q-mb-md-none"
+        class="col-xs-12 col-sm-12 col-md-6 q-mr-md-md q-mr-lg-none"
         style="height: 770px"
       >
         <q-card-section class="text-h6"> Latest Reviews </q-card-section>
@@ -34,52 +35,40 @@
           </q-scroll-area>
         </q-card-section>
       </q-card>
-      <div class="col row justify-between">
-        <div
-          class="col-xs-12 col-sm-6 column q-pr-xs-none q-pr-sm-md q-pr-md-md q-pb-md"
-        >
-          <q-card class="col row">
-            <q-date
-              class="col"
-              title="Calendar"
-              subtitle="Custom"
-              first-day-of-week="1"
-            />
-          </q-card>
-        </div>
-        <div class="col-xs-12 col-sm-6 row q-pb-md">
-          <q-card class="col">
-            <q-editor
-              style="min-height: 200px"
-              v-model="editor"
-              min-height="5rem"
-          /></q-card>
-        </div>
-        <div class="col-xs-12 col-sm-6 row q-pr-xs-none q-pr-sm-md q-pr-md-md">
-          <q-card class="col">
-            <q-card-section class="text-h6">Chat Messages</q-card-section>
-            <div style="width: 100%; max-width: 400px" class="q-pa-md">
-              <q-chat-message
-                name="me"
-                avatar="https://cdn.quasar.dev/img/avatar2.jpg"
-                :text="['hey, how are you?']"
-                sent
-                stamp="7 minutes ago"
-              />
-              <q-chat-message
-                name="Jane"
-                avatar="https://cdn.quasar.dev/img/avatar3.jpg"
-                :text="['doing fine, how r you?']"
-                stamp="4 minutes ago"
-              />
-            </div>
-          </q-card>
-        </div>
-        <div
-          class="col-xs-12 col-sm-6 row text-center q-pt-xs-md q-pt-sm-none q-mt-md-none"
-        >
-          <q-card class="col">
+      <div
+        class="flex flex-end col-xs-12 col-sm-12 col-md-5 col-lg-6 q-mt-xs-md q-mt-md-none"
+      >
+        <div class="row">
+          <q-date
+            class="col-xs-12 col-sm-12 col-md-6"
+            title="Calendar"
+            subtitle="Custom"
+            first-day-of-week="1"
+          />
+          <q-editor
+            class="col-xs-12 col-sm-12 col-md-6 q-mt-xs-md q-mt-md-none"
+            v-model="editor"
+          />
+
+          <q-card
+            class="col-xs-12 col-sm-12 col-md-6 q-mt-xs-md q-mt-md-none text-center"
+          >
             <q-time v-model="time" />
+          </q-card>
+          <q-card class="col-xs-12 col-md-6 q-mt-xs-md q-mt-md-none">
+            <q-chat-message
+              name="me"
+              avatar="https://cdn.quasar.dev/img/avatar2.jpg"
+              :text="['hey, how are you?']"
+              sent
+              stamp="7 minutes ago"
+            />
+            <q-chat-message
+              name="Jane"
+              avatar="https://cdn.quasar.dev/img/avatar3.jpg"
+              :text="['doing fine, how r you?']"
+              stamp="4 minutes ago"
+            />
           </q-card>
         </div>
       </div>
