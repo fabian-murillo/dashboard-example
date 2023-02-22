@@ -1,33 +1,22 @@
 <template>
   <q-page class="q-pa-lg bg-grey-2">
-    <div class="row q-pb-md justify-around">
-      <q-card
-        style="min-height: 300px"
-        class="q-pa-sm column col-xs-12 col-sm-12 col-md-grow col-lg-grow q-mb-xs-md q-mb-md-none q-mr-md-md q-mr-lg-none"
-      >
+    <div class="row q-pb-md justify-between">
+      <q-card class="q-pa-sm column justify-between col-3">
         <q-card-section class="text-h6"> Image Carousel </q-card-section>
         <ImageCarousel class="col" />
       </q-card>
-      <q-card
-        class="col-xs-12 col-sm-12 col-md-col order-md-last order-lg-none col-lg-5 q-mt-md-md q-mt-lg-none q-mx-md-md"
-      >
+      <q-card class="q-pa-md col q-mx-md">
         <DataTable />
       </q-card>
-      <q-card
-        class="col-xs-12 col-sm-12 col-md-grow col-lg-grow q-mt-xs-md q-mt-sm-md q-mt-md-none"
-      >
+      <q-card class="q-pt-sm q-pl-sm col-3">
         <q-card-section class="text-h6">Satisfaction Slider</q-card-section>
         <q-card-section>
           <SatisfactionSlider />
         </q-card-section>
       </q-card>
     </div>
-
-    <div class="row">
-      <q-card
-        class="col-xs-12 col-sm-12 col-md-6 q-mr-md-md q-mr-lg-none"
-        style="height: 770px"
-      >
+    <div class="row col-12 justify-between">
+      <q-card class="col-5 q-pa-sm q-mr-md" style="height: 770px">
         <q-card-section class="text-h6"> Latest Reviews </q-card-section>
         <q-card-section>
           <q-scroll-area style="height: 600px">
@@ -35,40 +24,45 @@
           </q-scroll-area>
         </q-card-section>
       </q-card>
-      <div
-        class="flex flex-end col-xs-12 col-sm-12 col-md-5 col-lg-6 q-mt-xs-md q-mt-md-none"
-      >
-        <div class="row">
-          <q-date
-            class="col-xs-12 col-sm-12 col-md-6"
-            title="Calendar"
-            subtitle="Custom"
-            first-day-of-week="1"
-          />
-          <q-editor
-            class="col-xs-12 col-sm-12 col-md-6 q-mt-xs-md q-mt-md-none"
-            v-model="editor"
-          />
-
-          <q-card
-            class="col-xs-12 col-sm-12 col-md-6 q-mt-xs-md q-mt-md-none text-center"
-          >
-            <q-time v-model="time" />
+      <div class="col row justify-between">
+        <div class="col-6 column q-pr-md q-pb-md">
+          <q-card class="col row">
+            <q-date
+              class="col"
+              title="Calendar"
+              subtitle="Custom"
+              first-day-of-week="1"
+            />
           </q-card>
-          <q-card class="col-xs-12 col-md-6 q-mt-xs-md q-mt-md-none">
-            <q-chat-message
-              name="me"
-              avatar="https://cdn.quasar.dev/img/avatar2.jpg"
-              :text="['hey, how are you?']"
-              sent
-              stamp="7 minutes ago"
-            />
-            <q-chat-message
-              name="Jane"
-              avatar="https://cdn.quasar.dev/img/avatar3.jpg"
-              :text="['doing fine, how r you?']"
-              stamp="4 minutes ago"
-            />
+        </div>
+        <div class="col-6 row q-pb-md">
+          <q-card class="col">
+            <q-editor v-model="editor" min-height="5rem"
+          /></q-card>
+        </div>
+        <div class="col-6 row q-pr-md">
+          <q-card class="col">
+            <q-card-section class="text-h6">Chat Messages</q-card-section>
+            <div style="width: 100%; max-width: 400px" class="q-pa-md">
+              <q-chat-message
+                name="me"
+                avatar="https://cdn.quasar.dev/img/avatar2.jpg"
+                :text="['hey, how are you?']"
+                sent
+                stamp="7 minutes ago"
+              />
+              <q-chat-message
+                name="Jane"
+                avatar="https://cdn.quasar.dev/img/avatar3.jpg"
+                :text="['doing fine, how r you?']"
+                stamp="4 minutes ago"
+              />
+            </div>
+          </q-card>
+        </div>
+        <div class="col-6 row text-center">
+          <q-card class="col">
+            <q-time v-model="time" />
           </q-card>
         </div>
       </div>
